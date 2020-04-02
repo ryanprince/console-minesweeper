@@ -1,11 +1,8 @@
 const prompt = require('prompt-sync')({ sigint: true });
 const Board = require('./Board');
+const { mRows, nCols, mineCount } = require('./config');
 
-const mRows = 5;
-const nCols = 5;
-const nMines = 5;
-
-const gameBoard = new Board(mRows, nCols, nMines);
+const gameBoard = new Board(mRows, nCols, mineCount);
 
 function playerHasLost(board) {
   return board.revealedMineCount() !== 0;
